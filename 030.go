@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "strconv"
+    _"strconv"
     "math"
 )
 
@@ -38,10 +38,12 @@ func getProdNthDigit(request []int) int {
         if e <= 1 {
             modulo += 1
         }
+        
+        fmt.Println(number, modulo)
 
-        digit := string(strconv.Itoa(number)[modulo - 1])
-        digitNumber, _ := strconv.Atoi(digit)
-        prod *= digitNumber
+        // digit := string(strconv.Itoa(number)[modulo - 1])
+        // digitNumber, _ := strconv.Atoi(digit)
+        prod *= 1
         prevRequest = e
     }
     
@@ -49,7 +51,7 @@ func getProdNthDigit(request []int) int {
 }
 
 func main() {
-    request := []int{1, 10, 100, 1000, 10000, 100000, 1000000, 10000000}
+    request := []int{68, 98, 246}
     
     gpnd := getProdNthDigit(request)
     fmt.Println(gpnd)
